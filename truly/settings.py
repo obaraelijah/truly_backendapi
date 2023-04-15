@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'truly.wsgi.application'
 
 DATABASES = {
     'default': {},
-    'users': {
+     'users': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listingz_user',
         'USER': 'Truly',
@@ -82,7 +82,9 @@ DATABASES = {
     }
 }
 
-DATABASE_ROUTERS = ['user.router.AuthRouter',]
+
+DATABASE_ROUTERS = ['user.router.AuthRouter']
+
 
 
 # Password validation
