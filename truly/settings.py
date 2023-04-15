@@ -71,14 +71,14 @@ DATABASES = {
      'users': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listingz_user',
-        'USER': 'Truly',
-        'PASSWORD': 'Truly',    
+        'USER': 'trulyuser',
+        'PASSWORD': 'password',    
     },
     'listings': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listingz_listing',
-        'USER': 'Truly',
-        'PASSWORD': 'Truly',   
+        'USER': 'trulyuser',
+        'PASSWORD': 'password',   
     }
 }
 
