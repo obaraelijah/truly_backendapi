@@ -13,12 +13,25 @@ class UserAccountManager(BaseUserManager):
             email = email,
             name =name
         )
-        
         user.set_password(password)
         user.save(using=self._db)
-        
         return user
     
+    def create_realtor(self, email, name, password=None):
+        user = self.create_user(email, name, password)
+        
+        user.is_realtor= True
+        user.save(using=self._db)
+        return user
+    
+    def create_superuser(self, email, name, password=None):
+        user = self.create_user(email, name, password)
+        
+        user.is_superuser = True
+        user.is_staff = True
+        user.save(using=self._db)
+        return user
+        
         
 class UserAccount(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
@@ -31,3 +44,6 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
+    
+    def __str__(self):
+        return self.email
