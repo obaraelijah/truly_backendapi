@@ -72,13 +72,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listingz_user',
         'USER': 'trulyuser',
-        'PASSWORD': 'password',    
+        'PASSWORD': 'sam',   
     },
     'listings': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'listingz_listing',
         'USER': 'trulyuser',
-        'PASSWORD': 'password',   
+        'PASSWORD': 'sam',   
     }
 }
 
@@ -136,8 +136,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=50),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': False,
     'AUTH_HEADER_TYPES': ('Bearer', ),
